@@ -191,7 +191,7 @@ ln(n) < n < n² < 2ⁿ < n!
 
 ---
 
-# ✔ Conclusión
+#  Conclusión
 
 - El término de mayor grado domina el crecimiento.
 - Los logaritmos crecen más lento que las funciones lineales.
