@@ -153,6 +153,77 @@ Mediante el criterio del límite se demuestra que:
 - El logaritmo crece más lento que la función lineal.
 - El factorial crece más rápido que la función exponencial.
 
+
+
+
+
+Módulo 2: Análisis de Algoritmos
+
+##  Ejercicio 2.1 – Buscador de pares
+
+El algoritmo recorre una lista buscando un número par igual al objetivo.
+
+- Mejor caso: O(1) (lo encuentra en la primera posición)
+- Peor caso: O(n) (recorre toda la lista)
+
+Complejidad final: O(n)
+
+---
+
+##  Ejercicio 2.2 – Salto de índices
+
+El algoritmo duplica el valor de i en cada iteración:
+
+1 → 2 → 4 → 8 → ...
+
+El número de iteraciones es log₂(n).
+
+- Mejor caso: O(1)
+- Peor caso: O(log n)
+
+Complejidad final: O(log n)
+
+---
+
+#  Orden de crecimiento (menor a mayor)
+
+ln(n) < n < n² < 2ⁿ < n!
+
+---
+
+# ✔ Conclusión
+
+- El término de mayor grado domina el crecimiento.
+- Los logaritmos crecen más lento que las funciones lineales.
+- Los factoriales crecen más rápido que las exponenciales.
+- Recorrer una lista es O(n).
+- Duplicar o dividir el problema produce O(log n).
+
+---
+
+#  Módulo 3: Implementación (Programación)
+
+En este módulo se implementan soluciones en Python cumpliendo las restricciones de eficiencia solicitadas.
+
+---
+
+## Ejercicio 3.1 – Intersección de Listas
+
+Se debe crear una función que retorne los elementos comunes entre dos listas.
+
+---
+
+###  Versión Ingenua (O(n²))
+
+```python
+def interseccion_ingenua(lista1, lista2):
+    resultado = []
+    for a in lista1:
+        for b in lista2:
+            if a == b:
+                resultado.append(a)
+    return resultado
+
 ---
 
 **Autor:** Johan Cardona  
