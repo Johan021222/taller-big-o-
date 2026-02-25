@@ -145,7 +145,7 @@ n! = \omega(2^n)
 
 ---
 
-# ✔ Conclusión
+#  Conclusión
 
 Mediante el criterio del límite se demuestra que:
 
