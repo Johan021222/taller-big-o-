@@ -1,176 +1,118 @@
-#
+# Taller de Complejidad Algorítmica (Big O)
+
+Autor: Johan Cardona  
+Asignatura: Complejidad Algorítmica  
+Lenguaje: Python  
+
 ---
 
-Módulo 1: Criterio del Límite
+# 1. Módulo 1: Criterio del Límite
 
-Usamos:
+Usamos el límite:
 
-\[
-\lim_{n \to \infty} \frac{f(n)}{g(n)}
-\]
+lim (n → ∞) f(n) / g(n)
 
-- Si el límite = 0 →  f(n) = O(g(n))
-- Si el límite = c (constante positiva) → f(n) = Θ(g(n))
+- Si el límite = 0 → f(n) = O(g(n))
+- Si el límite = constante positiva → f(n) = Θ(g(n))
 - Si el límite = ∞ → f(n) crece más rápido que g(n)
 
 ---
 
- Ejercicio 1.1
+## 1.1 Función Cuadrática
 
 Demostrar que:
 
-\[
-f(n) = 7n^2 + 5n + 2
-\]
+f(n) = 7n² + 5n + 2
 
-es \( O(n^2) \).
-
-### Solución
+es O(n²).
 
 Tomamos:
 
-\[
-g(n) = n^2
-\]
+g(n) = n²
 
-\[
-\lim_{n \to \infty} \frac{7n^2 + 5n + 2}{n^2}
-\]
+Calculamos:
 
-Dividiendo por \( n^2 \):
+lim (n → ∞) (7n² + 5n + 2) / n²
 
-\[
-= \lim_{n \to \infty} \left( 7 + \frac{5}{n} + \frac{2}{n^2} \right)
-\]
+Dividimos cada término entre n²:
 
-Cuando \( n \to \infty \):
+= 7 + 5/n + 2/n²
 
-\[
+Cuando n → ∞:
+
 = 7
-\]
 
 Como el resultado es una constante positiva:
 
-\[
-f(n) = \Theta(n^2)
-\]
+f(n) = Θ(n²)
 
 Por lo tanto:
 
-\[
-f(n) = O(n^2)
-\]
+f(n) = O(n²)
 
 ---
 
-# Ejercicio 1.2
+## 1.2 Función Logarítmica
 
 Demostrar que:
 
-\[
-\ln(n) = O(n)
-\]
+ln(n) = O(n)
 
-### Solución
+Calculamos:
 
-Tomamos:
+lim (n → ∞) ln(n) / n
 
-\[
-\lim_{n \to \infty} \frac{\ln(n)}{n}
-\]
+El resultado es:
 
-Sabemos que el logaritmo crece más lento que la función lineal, entonces:
-
-\[
 = 0
-\]
 
 Como el límite es 0:
 
-\[
-\ln(n) = O(n)
-\]
+ln(n) = O(n)
 
 ---
 
-## Ejercicio 1.3
+## 1.3 Factorial vs Exponencial
 
 Comparar:
 
-\[
-f(n) = n!
-\]
+n!   y   2ⁿ
 
-y
+Calculamos:
 
-\[
-g(n) = 2^n
-\]
+lim (n → ∞) n! / 2ⁿ
 
-### Solución
+El resultado es:
 
-Analizamos:
-
-\[
-\lim_{n \to \infty} \frac{n!}{2^n}
-\]
-
-El factorial multiplica números cada vez más grandes, mientras que \(2^n\) siempre multiplica por 2.
-
-El límite es:
-
-\[
-= \infty
-\]
+= ∞
 
 Entonces:
 
-\[
-n! \text{ crece más rápido que } 2^n
-\]
-
-Es decir:
-
-\[
-n! = \omega(2^n)
-\]
+n! crece más rápido que 2ⁿ  
+n! = ω(2ⁿ)
 
 ---
 
-#  Orden de crecimiento (de menor a mayor)
+## Orden de crecimiento (menor a mayor)
 
-\[
-\ln(n) < n < n^2 < 2^n < n!
-\]
+ln(n) < n < n² < 2ⁿ < n!
 
 ---
 
-#  Conclusión
+# 2. Módulo 2: Análisis de Algoritmos
 
-Mediante el criterio del límite se demuestra que:
-
-- \(7n^2 + 5n + 2\) es de orden cuadrático.
-- El logaritmo crece más lento que la función lineal.
-- El factorial crece más rápido que la función exponencial.
-
-
-
-
-
-Módulo 2: Análisis de Algoritmos
-
-##  Ejercicio 2.1 – Buscador de pares
+## 2.1 Buscador de pares
 
 El algoritmo recorre una lista buscando un número par igual al objetivo.
 
-- Mejor caso: O(1) (lo encuentra en la primera posición)
-- Peor caso: O(n) (recorre toda la lista)
+- Mejor caso: O(1) → lo encuentra en la primera posición.
+- Peor caso: O(n) → recorre toda la lista.
 
 Complejidad final: O(n)
 
 ---
 
-##  Ejercicio 2.2 – Salto de índices
+## 2.2 Salto de índices
 
 El algoritmo duplica el valor de i en cada iteración:
 
@@ -185,35 +127,11 @@ Complejidad final: O(log n)
 
 ---
 
-#  Orden de crecimiento (menor a mayor)
+# 3. Módulo 3: Implementación
 
-ln(n) < n < n² < 2ⁿ < n!
+## 3.1 Intersección de Listas
 
----
-
-#  Conclusión
-
-- El término de mayor grado domina el crecimiento.
-- Los logaritmos crecen más lento que las funciones lineales.
-- Los factoriales crecen más rápido que las exponenciales.
-- Recorrer una lista es O(n).
-- Duplicar o dividir el problema produce O(log n).
-
----
-
-#  Módulo 3: Implementación (Programación)
-
-En este módulo se implementan soluciones en Python cumpliendo las restricciones de eficiencia solicitadas.
-
----
-
-## Ejercicio 3.1 – Intersección de Listas
-
-Se debe crear una función que retorne los elementos comunes entre dos listas.
-
----
-
-###  Versión Ingenua (O(n²))
+### Versión Ingenua (O(n²))
 
 ```python
 def interseccion_ingenua(lista1, lista2):
@@ -223,13 +141,3 @@ def interseccion_ingenua(lista1, lista2):
             if a == b:
                 resultado.append(a)
     return resultado
-
----
-
-**Autor:** Johan Cardona  
-**Asignatura:** Complejidad Algorítmica  
-**Lenguaje:** Python  
-**Entrega:** Repositorio GitHub
-
-
-
